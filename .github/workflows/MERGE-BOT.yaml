@@ -27,4 +27,5 @@ jobs:
 
       - name: Run bot
         run: |
-          python ./MERGE-BOT/bot.py
+          cd MERGE-BOT 
+          python bot.py
