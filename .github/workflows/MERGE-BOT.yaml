@@ -3,7 +3,7 @@ name: Deploy MERGE-BOT with Docker
 on:
   push:
     branches:
-      - main  # Adjust if needed
+      - main
 
 jobs:
   deploy:
@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Checkout MERGE-BOT repository
         run: |
-          git clone https://$TOKENgithub.com/appujohn007/MERGE-BOT.git
+          git clone https://${{ secrets.TOKEN }}github.com/appujohn007/MERGE-BOT.git
           cd MERGE-BOT
 
       - name: Set up Docker Buildx
