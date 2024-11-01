@@ -18,12 +18,12 @@ jobs:
       - name: Install Essentials
         run: |
           sudo apt-get -y update && \
-          sudo apt-get install --no-install-recommends -y ffmpeg && \
+          sudo apt-get install --no-install-recommends -y git wget curl pv jq ffmpeg neofetch mediainfo && \
           sudo apt-get clean
 
       - name: Install Pip Dependencies
         run: |
-          pip install -r needs.txt
+          pip install -r ./MERGE-BOT/needs.txt
 
       - name: Run bot
         run: |
