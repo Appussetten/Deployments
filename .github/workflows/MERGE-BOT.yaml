@@ -19,7 +19,7 @@ jobs:
         run: |
           sudo apt-get -y update && \
           sudo apt-get -y upgrade && \
-          sudo apt-get install --no-install-recommends -y git wget curl pv jq ffmpeg neofetch mediainfo && \
+          sudo apt-get install --no-install-recommends -y ffmpeg && \
           sudo apt-get clean
 
       - name: Install Pip Dependencies
