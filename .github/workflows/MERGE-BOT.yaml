@@ -16,12 +16,12 @@ jobs:
           cd MERGE-BOT
 
       - name: Install Essentials
-        run: |
-          cd MERGE-BOT
-          sudo apt-get -y update && \
-          sudo apt-get -y upgrade && \
-          sudo apt-get install -y git wget curl pv jq ffmpeg neofetch mediainfo && \
-          sudo apt-get clean
+      run: |
+      cd MERGE-BOT
+      sudo apt-get -y update && \
+      sudo apt-get -y upgrade && \
+      sudo apt-get install --no-install-recommends -y git wget curl pv jq ffmpeg neofetch mediainfo && \
+      sudo apt-get clean
 
       - name: Install Pip Dependencies
         run: |
