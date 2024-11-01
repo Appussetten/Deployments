@@ -12,16 +12,15 @@ jobs:
     steps:
       - name: Checkout MERGE-BOT repository
         run: |
-          git clone https://${{ secrets.TOKEN }}github.com/appujohn007/MERGE-BOT.git
+          git clone https://${{ secrets.TOKEN }}@github.com/appujohn007/MERGE-BOT.git
           cd MERGE-BOT
 
       - name: Install Essentials
-      run: |
-      cd MERGE-BOT
-      sudo apt-get -y update && \
-      sudo apt-get -y upgrade && \
-      sudo apt-get install --no-install-recommends -y git wget curl pv jq ffmpeg neofetch mediainfo && \
-      sudo apt-get clean
+        run: |
+          sudo apt-get -y update && \
+          sudo apt-get -y upgrade && \
+          sudo apt-get install --no-install-recommends -y git wget curl pv jq ffmpeg neofetch mediainfo && \
+          sudo apt-get clean
 
       - name: Install Pip Dependencies
         run: |
