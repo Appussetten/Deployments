@@ -1,0 +1,28 @@
+name: Deploy MERGE-BOT with Docker
+
+on:
+  push:
+    branches:
+      - main  # Adjust if needed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout MERGE-BOT repository
+        run: |
+          git clone https://$GITHUB_TOKENgithub.com/appujohn007/MERGE-BOT.git
+          cd MERGE-BOT
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build Docker image
+        run: |
+          cd MERGE-BOT
+          docker build -t merge-bot:latest .
+
+      - name: Run Docker container
+        run: |
+          docker run -d -p 8080:8080 merge-bot:latest
